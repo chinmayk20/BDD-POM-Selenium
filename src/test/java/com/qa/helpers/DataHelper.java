@@ -9,15 +9,23 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class DataHelper {
+
     public static HashMap<String,String> storeValues = new HashMap();
+
     public static List<HashMap<String,String>> data(String filepath,String sheetName)
     {
         List<HashMap<String,String>> mydata = new ArrayList<>();
         try
         {
+            // load file
             FileInputStream fs = new FileInputStream(filepath);
+
+            // Load workbook
             XSSFWorkbook workbook = new XSSFWorkbook(fs);
+
+            // Load sheet- Here we are loading sheet based on name
             XSSFSheet sheet = workbook.getSheet(sheetName);
+
             Row HeaderRow = sheet.getRow(0);
             for(int i=1;i<sheet.getPhysicalNumberOfRows();i++)
             {

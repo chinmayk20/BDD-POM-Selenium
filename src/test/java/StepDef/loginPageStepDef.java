@@ -3,8 +3,10 @@ package StepDef;
 import com.qa.pageObjects.loginPageObjects;
 import com.qa.support.ReadConfigProperties;
 import com.qa.support.DriverFactory;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -73,7 +75,7 @@ public class loginPageStepDef extends DriverFactory {
 
         System.out.println("Chin" + abc);
 
-        List<String> mp = new ArrayList<>();
+        List<String> mp = new ArrayList<>();    // most common type
 
         mp.add("my");
         mp.add("name");
@@ -134,4 +136,5 @@ public class loginPageStepDef extends DriverFactory {
         yes = 5==nmb;
         return yes;
     }
+
 }

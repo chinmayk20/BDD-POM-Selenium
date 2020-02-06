@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class loginPageObjects extends DriverFactory {
 
@@ -23,6 +25,9 @@ public class loginPageObjects extends DriverFactory {
 
     @FindBy(xpath = "//span[contains(text(),'Log In')]")
     private WebElement logIn;
+
+    @FindBy(xpath = "//span[contains(text()]")
+    public List<WebElement> myLoginList;
 
     //div[@class='ui fluid large blue submit button']
 

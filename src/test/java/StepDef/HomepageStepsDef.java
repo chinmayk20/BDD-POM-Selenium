@@ -47,12 +47,8 @@ public class HomepageStepsDef extends DriverFactory {
 
     @And("^I enter the username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
     public void iEnterTheUsernameAsAndPasswordAs(String username, String password) throws Throwable {
-    }
-
-    @And("^I enter following new credentials$")
-    public void iEnterFollowingNewCredentials(DataTable table) {
-
-
+        System.out.println(username);
+        System.out.println(password);
     }
 
 
@@ -62,11 +58,11 @@ public class HomepageStepsDef extends DriverFactory {
         driver.quit();
     }
 
-    @And("^I see \"([^\"]*)\" links$")
-    public void iSeeFollowingLinks() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
+//    @And("^I see \"([^\"]*)\" links$")
+//    public void iSeeFollowingLinks() throws Throwable {
+//        // Write code here that turns the phrase above into concrete actions
+//        throw new PendingException();
+//    }
 
     @And("^I see (.*) link$")
     public void iSeeContactsLinks(EnumConstants.MenuBar menuBar ) {

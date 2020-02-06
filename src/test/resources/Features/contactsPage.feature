@@ -1,6 +1,6 @@
 Feature: Contacts Page
 
-  @test
+
   Scenario Outline:: Contacts Page test
     Given I navigate to the login page
     And I click on login Button
@@ -21,7 +21,7 @@ Feature: Contacts Page
     And I see Arin as name
     And I see contacts link
 
-  @test
+
   Scenario: Test Enum
     Given I navigate to the login page
     And I click on login Button
@@ -34,3 +34,12 @@ Feature: Contacts Page
     Scenario: test
       Given I am testing hashmap
       And I am testing boolean
+
+
+    Scenario Outline: my stuff
+      Given I navigate to the login page
+      And I see following <content>
+      Examples:
+        | content |
+        | abc        |
+        |  pqr          |

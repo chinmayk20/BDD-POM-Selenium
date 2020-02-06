@@ -1,7 +1,8 @@
 Feature: Home Page
 
+
   Scenario: Login with correct username and password
-    Given I navigate to the login page
+#    Given I navigate to the login page
     And I enter the username as "admin" and password as "admin"
     And I enter following new credentials
       | uname    | pass        |
