@@ -15,7 +15,6 @@ Feature: List arrays examples
 #    And assert whether string exist in the list
     And also check using try and catch method
 
-  @test
   Scenario: To test List arrays One more
     And I am good
     And I create a list of lists

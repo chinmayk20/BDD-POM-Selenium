@@ -10,9 +10,10 @@ Feature: Contacts Page
     And I close the browser
     Examples:
       | row_index |
-      |    2       |
-      |    3       |
-  @ck
+      | 2         |
+      | 3         |
+
+
   Scenario: Test Enum
     Given I navigate to the login page
     And I click on login Button
@@ -27,19 +28,19 @@ Feature: Contacts Page
     And I click on login Button
     And I enter the username and password
     And I see following links
-      |Home|
-      |contacts|
-      |Calendar        |
+      | Home     |
+      | contacts |
+      | Calendar |
 
-    Scenario: test
-      Given I am testing hashmap
-      And I am testing boolean
+  Scenario: test
+    Given I am testing hashmap
+    And I am testing boolean
 
 
-    Scenario Outline: my stuff
-      Given I navigate to the login page
-      And I see following <content>
-      Examples:
-        | content |
-        | abc        |
-        |  pqr          |
+  Scenario Outline: my stuff
+    Given I navigate to the login page
+    And I see following <content>
+    Examples:
+      | content |
+      | abc     |
+      | pqr     |
