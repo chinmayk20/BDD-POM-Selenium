@@ -3,12 +3,12 @@ package StepDef;
 import com.qa.pageObjects.loginPageObjects;
 import com.qa.support.DriverFactory;
 import com.qa.testData.UserData;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import io.cucumber.datatable.DataTable;
 import org.openqa.selenium.WebElement;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -28,7 +28,7 @@ public class DataDrivenExamples extends DriverFactory {
     @Then("^I enter valid data on the page using raw$")
     public void iEnterValidDataOnThePageUsingRaw(DataTable table) {
 
-        List<List<String>> data = table.raw();
+        List<List<String>> data = Collections.singletonList(table.row(0));
 //        for (List<String> da : data){
 //            System.out.println(da);
 //        }
@@ -45,7 +45,7 @@ public class DataDrivenExamples extends DriverFactory {
     @And("^I enter following new credentials$")
     public void iEnterFollowingNewCredentials(DataTable table) {
 
-        List<List<String>> myData = table.raw();
+        List<List<String>> myData = Collections.singletonList(table.row(0));
         for (List<String> abc : myData)
             System.out.println(abc.get(0));
     }
@@ -54,7 +54,7 @@ public class DataDrivenExamples extends DriverFactory {
     @Then("^I enter valid data on the page using HashMap$")
     public void iEnterValidDataOnThePageUsingHashMap(DataTable table) {
 
-        for (Map<String, String> user : table.asMaps(String.class,String.class)){
+        for (Map<Object, Object> user : table.asMaps(String.class,String.class)){
             System.out.println(user.get("title"));
             System.out.println(user.get("firstname"));
             System.out.println(user.get("lastname"));
@@ -67,12 +67,12 @@ public class DataDrivenExamples extends DriverFactory {
     @Then("^I enter valid data on the page using POJO type$")
     public void iEnterValidDataOnThePageUsingPOJOType(List<UserData> myData) {
 
-            for (UserData user : myData){
-                System.out.println(user.getFirstname());
-                System.out.println(user.getLastname());
+        for (UserData user : myData){
+            System.out.println(user.getFirstname());
+            System.out.println(user.getLastname());
 //                driver.findElement(By.cssSelector("input[name*='title']")).sendKeys(user.getFirstname());
 //                driver.findElement(By.cssSelector("input[name*='title']")).sendKeys(user.getLastname());
-            }
+        }
 
     }
 
